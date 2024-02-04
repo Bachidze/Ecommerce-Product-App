@@ -9,7 +9,7 @@ const Product = () => {
     ];
 
     const leftImage = '/assets/Path 2 (4).svg'
-    const rightImage = '/public/assets/Path 2 (5).svg'
+    const rightImage = '/assets/Path 2 (5).svg'
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
