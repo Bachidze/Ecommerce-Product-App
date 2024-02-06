@@ -1,19 +1,33 @@
+import { useState } from "react";
 
 
 const Desc = () => {
+  const [integer,setInteger] = useState(0)
+
+  const up = () => {
+    if(integer < 7){
+      setInteger(integer + 1)
+    }
+  }
+  const down = () => {
+    if (integer > 0) {
+      setInteger(integer - 1);
+    }
+  }
+  
     const ShopImg = '/assets/Group 14.svg';
   return (
-    <div className="p-6 flex flex-col justify-center items-center">
-        <h1 className="text-[#FF7E1B] text-[14px] font-bold relative bottom-[75px]">Sneaker Company</h1>
-        <h2 className="text-[28px] font-bold text-[#1D2026] relative bottom-[60px]">Fall Limited Edition Sneakers</h2>
-        <p className="text-[15px] text-[#69707D] w-[350px] relative bottom-[50px] pl-4">These low-profile sneakers are your perfect 
+    <div className="p-6 flex flex-col justify-center items-center ">
+        <h1 className="text-[#FF7E1B] text-[14px]  font-bold relative bottom-[75px]">Sneaker Company</h1>
+        <h2 className="text-[26px] font-bold  text-[#1D2026] relative bottom-[60px]">Fall Limited Edition Sneakers</h2>
+        <p className="text-[15px] text-[#69707D]  w-[350px] relative bottom-[50px] pl-4">These low-profile sneakers are your perfect 
            casual wear companion. Featuring a durable
            rubber outer sole, they’ll withstand
            everything the weather can offer.</p>
 
            <div className="flex justify-between items-center relative bottom-[30px]">
                 <div className="flex gap-5 items-center relative right-[50px]">
-                    <h3 className="text-[#1D2026] font-bold text-[28px]">$125.00</h3>
+                    <h3 className="text-[#1D2026] font-bold text-[28px] ">$125.00</h3>
                     <h4 className="text-[#FF7E1B] font-bold bg-[#FFEEE2] text-[16px] w-[40px] h-[25px] rounded-[5px] flex justify-center">50%</h4>
                 </div>
                 <div>
@@ -21,10 +35,10 @@ const Desc = () => {
                 </div>
            </div>
 
-           <div className="flex items-center justify-between w-[327px] bg-[#F6F8FD] h-[56px] rounded-[15px] pl-4 pr-4 relative bottom-[15px] mb-[15px]">
-            <div className="text-[#FF7E1B] font-bold text-[26px]">+</div>
-            <div className="text-[#1D2026] font-bold text-[20px]">1</div>
-            <div className="text-[#FF7E1B] font-bold text-[26px]">-</div>
+           <div className="flex items-center justify-between w-[327px] bg-[#F6F8FD] h-[56px] rounded-[15px] pl-4 pr-4 relative bottom-[15px] mb-[15px] cursor-pointer">
+            <div onClick={up} className="text-[#FF7E1B] font-bold text-[26px]">+</div>
+            <div className="text-[#1D2026] font-bold text-[20px]">{integer}</div>
+            <div onClick={down} className="text-[#FF7E1B] font-bold text-[26px]">-</div>
            </div>
 
            <form className="flex justify-center items-center">
