@@ -9,8 +9,10 @@ function App() {
   return (
     <>
     <Header/>
+    <div className='xl:flex justify-center items-center xl:mt-[90px] xl:gap-[125px]'>
     <Product/>
     <Desc/>
+    </div>
     </>
   )
 }

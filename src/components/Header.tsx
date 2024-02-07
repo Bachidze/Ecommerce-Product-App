@@ -3,9 +3,15 @@ import { useState } from "react";
 
 const Header = () => {
     const [showMenu, setShowMenu] = useState(false);
+    const [showDiv, setShowDiv] = useState(false);
 
     const handleToggle = () => {
         setShowMenu(!showMenu);
+        setShowDiv(false)
+    };
+    const toggleDiv = () => {
+        setShowDiv(!showDiv);
+        setShowMenu(false)
     };
 
     const Menu = '/assets/Combined Shape 2 (2).svg';
@@ -38,7 +44,7 @@ const Header = () => {
                 </div>
 
                 <div className="flex">
-                    <img className="mr-4 cursor-pointer md:w-[25px]" src={ShopImg} alt="ShopImg" />
+                    <img onClick={toggleDiv} className="mr-4 cursor-pointer md:w-[25px]" src={ShopImg} alt="ShopImg" />
                     <img src={MenImg} alt="MenImg" className="md:w-[40px]" />
                 </div>
             </div>
@@ -58,7 +64,12 @@ const Header = () => {
             )}
 
             <div className=" hidden md:flex border border-[gray] w-[98%] h-full mt-[45px] ml-4 opacity-30"></div>
-
+            {showDiv &&
+            <div className="w-[360px] h-[256px] bg-white absolute rounded-[10px] top-[75px] right-[8px] z-10 xl:right-[200px]" style={{ boxShadow: '0px 20px 50px -20px rgba(29, 32, 38, 0.50)' }}>
+                <h2 className="text-[#1D2026] font-bold text-[16px] p-4">Cart</h2>
+                <div className="border w-[100%] bg-black mt-[15px]"></div>
+                <h3 className="flex justify-center pt-[77px] text-[#1D2026] font-bold text-[16px]">Your cart is empty.</h3>
+            </div>}
         </div>
     );
 };

@@ -22,8 +22,9 @@ const Product = () => {
     };
 
     return (
-        <div className="w-full h-full">
-            <div className="relative w-full h-96 overflow-hidden flex justify-center">
+        <>
+        <div className="xl:hidden">
+            <div className="relative w-full h-100 overflow-hidden flex justify-center">
                 <img src={ImgArr[currentIndex]} className="w-[375px] -z-10 h-auto" alt={`Image ${currentIndex}`} />
             </div>
             <div className="flex justify-center mt-4 gap-[250px]">
@@ -31,6 +32,19 @@ const Product = () => {
                 <button onClick={handleClickNext} className="w-[50px] h-[50px] bg-white rounded-full relative bottom-[235px] flex justify-center items-center"><img src={rightImage} alt="rightArrow"/></button>
             </div>
         </div>
+
+        <div>
+           <div className='hidden xl:flex'> 
+           <img src="/assets/MainEco.svg" alt="DesktopImg" />
+           </div>
+           <div className='hidden xl:flex gap-[30px] mt-[30px] mb-[100px]'> 
+            <img className='w-[88px] rounded-[10px]' src="/assets/MainEco.svg" alt="Mini1" />
+            <img src="/assets/Rectangle Copy 2 (1).svg" alt="Mini2" />
+            <img src="/assets/Rectangle Copy 3.svg" alt="Mini3" />
+            <img src="/assets/Rectangle Copy 4 (1).svg" alt="Mini4" />
+           </div>
+        </div>
+        </>
     );
 };
 
